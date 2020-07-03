@@ -1,0 +1,25 @@
+{
+  "name": "monkjson",
+  "version": "1.0.0",
+  "description": "MongoDB based quick.db like easy database system.",
+  "main": "index.js",
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "monk": "^7.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "monk",
+    "json",
+    "monkjson",
+    "easy",
+    "quick.db",
+    "quick",
+    "fast"
+  ],
+  "author": "Kıraç Armağan Önal",
+  "license": "Apache-2.0"
+}
