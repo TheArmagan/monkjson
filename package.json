@@ -21,5 +21,13 @@
     "fast"
   ],
   "author": "Kıraç Armağan Önal",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Armagann/monkjson.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Armagann/monkjson/issues"
+  },
+  "homepage": "https://github.com/Armagann/monkjson#readme"
 }
