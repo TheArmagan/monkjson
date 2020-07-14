@@ -15,9 +15,10 @@ let mjCollection;
 let isConnectionClosed = true;
 
 /**
- * @param {String} uri 
+ * @param {String} uri Connection uri
+ * @param {String} collectionName The Monkjson's collection name. (Default: monkjson)
  */
-function setConnection(uri) {
+function setConnection(uri,collectionName="monkjson") {
     isConnectionClosed = false;
     db = Monk.default(uri);
     mjCollection = db.get("monkjson");

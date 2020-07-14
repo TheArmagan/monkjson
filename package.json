@@ -1,6 +1,6 @@
 {
   "name": "monkjson",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MongoDB based quick.db like easy database system.",
   "main": "index.js",
   "dependencies": {

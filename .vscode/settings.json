@@ -13,5 +13,13 @@
         "nal",
         "ra",
         "Önal"
+    ],
+    "cSpell.ignoreWords": [
+        "antialiasing",
+        "antialiasing mode",
+        "cleartype",
+        "commandline",
+        "mode",
+        "monkjson"
     ]
 }
