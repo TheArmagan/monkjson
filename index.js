@@ -21,7 +21,7 @@ let isConnectionClosed = true;
 function setConnection(uri,collectionName="monkjson") {
     isConnectionClosed = false;
     db = Monk.default(uri);
-    mjCollection = db.get("monkjson");
+    mjCollection = db.get(collectionName);
     mjCollection.createIndex("name");
     return {db, mjCollection};
 }
