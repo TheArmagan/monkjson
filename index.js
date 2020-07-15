@@ -91,6 +91,15 @@ function MonkJson(name) {
     /**
      * @param {String} dataPath
      */
+    this.has = this.exists = async (dataPath)=>{
+        let dbJson = await getDBJson();
+        let resultData = _.has(dbJson, dataPath);
+        return resultData;
+    }
+
+    /**
+     * @param {String} dataPath
+     */
     this.del = this.unset = async (dataPath) => {
         let dbJson = await getDBJson();
         let isOk = _.unset(dbJson,dataPath); // this method mutates the original object
@@ -125,7 +134,7 @@ function MonkJson(name) {
         let dbJson = await getDBJson();
         let oldVal = _.get(dbJson, dataPath);
         let newVal = oldVal+value;
-        let resultData = _.set(dbJson, dataPath);
+        let resultData = _.set(dbJson, dataPath, newVal);
         await setDBJson(resultData);
         return newVal;
     }
@@ -138,7 +147,7 @@ function MonkJson(name) {
         let dbJson = await getDBJson();
         let oldVal = _.get(dbJson, dataPath);
         let newVal = oldVal-value;
-        let resultData = _.set(dbJson, dataPath);
+        let resultData = _.set(dbJson, dataPath, newVal);
         await setDBJson(resultData);
         return newVal;
     }
