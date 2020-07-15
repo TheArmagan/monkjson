@@ -1,12 +1,10 @@
 # Quick Example
 ```js
-let MonkJSON = require("monkjson");
-
-let MJ = new MonkJSON();
+let MJ = require("monkjson");
 
 MJ.setConnection("mongodb://127.0.0.1/monkjson");
 
-let db = new MJ.DataBase("db");
+let db = new MJ.MonkJson("db");
 
 (async ()=>{
     await db.set("test.hey.baby",Math.random());
