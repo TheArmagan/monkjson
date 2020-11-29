@@ -11,7 +11,8 @@
 >   await db.set("test.hey.baby", Math.random());
 >   let d = await db.get("test");
 >   console.log(d); //-> { hey: { baby: 0.9972221858216976 } }
->   MJ.endConnection();
+>
+>   MJ.endConnection(); // Disconnects from the database.
 > })();
 > ```
 
@@ -19,13 +20,13 @@
 >
 > `dataPath` is always needs be string type.
 >
-> - ### `new MonkJon(name: string)` -
+> - ### `new MonkJon(name: string)`
 >
 >   - `.name: String` - Name of the database.
 >   - `.set(dataPath, data): any | .put(dataPath, data): any`
 >   - `.get(dataPath): any`
 >   - `.has(dataPath): boolean | .exists(dataPath): boolean`
->   - `.del(dataPath): boolean | .unset(dataPath): boolean` - It returns a boolean whether the operation was successful or not.
+>   - `.del(dataPath): boolean | .delete(dataPath): boolean | .unset(dataPath): boolean` - It returns a boolean whether the operation was successful or not.
 >   - `.push(dataPath, ...values)`
 >   - `.add(dataPath, data)`
 >   - `.subtract(dataPath, data)`
@@ -35,7 +36,9 @@
 > - ### `endConnection()`
 > - ### `getConnection()`
 
-> ## 😎 Last update:
+> ## 😎 Update History:
+>
+> - db.delete aliases added for the db.del
 >
 > - db.update added.
 > - getConnection added.

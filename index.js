@@ -108,7 +108,7 @@ function MonkJson(name) {
     /**
      * @param {String} dataPath
      */
-    this.del = this.unset = async (dataPath) => {
+    this.del = this.delete = this.unset = async (dataPath) => {
         let dbJson = await getDBJson();
         let isOk = _.unset(dbJson, dataPath); // this method mutates the original object
         await setDBJson(dbJson);
