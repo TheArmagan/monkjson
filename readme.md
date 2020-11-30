@@ -3,6 +3,7 @@
 > ```js
 > let MJ = require("monkjson");
 >
+> // Connection is global btw.
 > MJ.setConnection("mongodb://127.0.0.1/monkjson");
 >
 > let db = new MJ.MonkJson("db");

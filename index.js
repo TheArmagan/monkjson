@@ -17,7 +17,7 @@ let isConnectionClosed = true;
 
 /**
  * @param {String} uri Connection uri
- * @param {String} collectionName The Monkjson's collection name. (Default: monkjson)
+ * @param {String} collectionName The MonkJson's collection name. (Default: monkjson)
  */
 function setConnection(uri, collectionName = "monkjson") {
     isConnectionClosed = false;
@@ -55,19 +55,21 @@ function MonkJson(name) {
     this.name = name;
 
     async function getDBJson() {
-        let mj = await mjCollection.findOne({ name });
+        let mj = await mjCollection.findOne({ name }, { projection: { name: 1 } });
+        console.log("GET", mj);
         if (!mj) {
-            await mjCollection.insert({ name, json: {} });
-            mj = await mjCollection.findOne({ name });
+            mj = await mjCollection.insert({ name, json: {} });
+            console.log("GET CRT", mj)
         }
         return mj.json;
     }
 
     async function setDBJson(dataToSet) {
-        let mj = await mjCollection.findOne({ name });
+        let mj = await mjCollection.findOne({ name }, { projection: { name: 1 } });
+        console.log("SET", mj);
         if (!mj) {
-            await mjCollection.insert({ name, json: {} });
-            mj = await mjCollection.findOne({ name });
+            mj = await mjCollection.insert({ name, json: {} });
+            console.log("SET CRT", mj)
         }
         mj.json = dataToSet;
         await mjCollection.findOneAndUpdate({ name }, { $set: mj });

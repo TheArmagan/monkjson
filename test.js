@@ -1,12 +1,13 @@
-let MJ = require("./index");
+(async () => {
+    let MJ = require("./index");
+    global.MJ = MJ;
 
-MJ.setConnection("mongodb://127.0.0.1/monkjson");
+    await MJ.setConnection("mongodb://127.0.0.1/monkjson");
 
-let db = new MJ.MonkJson("db");
-
-(async ()=>{
-    await db.set("test.hey.baby",Math.random());
-    let d = await db.get("test");
-    console.log(d); //-> { hey: { baby: 0.9972221858216976 } }
-    MJ.endConnection();
+    let db = new MJ.MonkJson("db");
+    new MJ.MonkJson("db");
+    require("./test2");
+    require("./test2 copy");
+    require("./test2 copy 2");
+    await db.set("owsla1", "asd");
 })();
